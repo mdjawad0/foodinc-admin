@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-09-07T03:28:29.299Z",
+    "end": "2022-09-07T03:28:44.179Z",
+    "duration": 14880,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "babb2752-c404-497e-b603-301b1f99c6c0",
+      "title": "",
+      "fullFile": "cypress/e2e/testcases/login-spec.cy.ts",
+      "file": "cypress/e2e/testcases/login-spec.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d76e9f0d-ed03-460f-9acd-6ee540b99378",
+          "title": "Admin Web App",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should have correct labels",
+              "fullTitle": "Admin Web App should have correct labels",
+              "timedOut": null,
+              "duration": 2617,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('label', 'Email');\ncy.contains('label', 'Password');",
+              "err": {},
+              "uuid": "2ccacf13-2693-4fa3-a075-f23ad2953634",
+              "parentUUID": "d76e9f0d-ed03-460f-9acd-6ee540b99378",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should login with email and password",
+              "fullTitle": "Admin Web App should login with email and password",
+              "timedOut": null,
+              "duration": 6570,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[formControlName=email]').type(\"admin@example.com\");\ncy.get('input[formControlName=password]').type(\"admin123\");\ncy.get('#btn1').click();\ncy.get('.navbar-nav li').should('have.length', 5);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.navbar-nav li`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.navbar-nav li`, but never found it.\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/e2e/testcases/login-spec.cy.ts:108:34)",
+                "diff": null
+              },
+              "uuid": "e0596451-aa3e-40b2-98c9-3eb86e0bba6a",
+              "parentUUID": "d76e9f0d-ed03-460f-9acd-6ee540b99378",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should redirect admin user to the dashboard page if they provided correct credentials",
+              "fullTitle": "Admin Web App should redirect admin user to the dashboard page if they provided correct credentials",
+              "timedOut": null,
+              "duration": 5274,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[formControlName=email]').type(\"admin@example.com\");\ncy.get('input[formControlName=password]').type(\"admin123\");\ncy.get('#btn1').click();\ncy.url().should('be.equal', 'http://localhost:4200/users');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:4200/login' to equal 'http://localhost:4200/users'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:4200/login' to equal 'http://localhost:4200/users'\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/e2e/testcases/login-spec.cy.ts:114:18)",
+                "diff": "- 'http://localhost:4200/login'\n+ 'http://localhost:4200/users'\n"
+              },
+              "uuid": "70edda08-446c-436e-9e1d-63babcd27ed4",
+              "parentUUID": "d76e9f0d-ed03-460f-9acd-6ee540b99378",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2ccacf13-2693-4fa3-a075-f23ad2953634"
+          ],
+          "failures": [
+            "e0596451-aa3e-40b2-98c9-3eb86e0bba6a",
+            "70edda08-446c-436e-9e1d-63babcd27ed4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14461,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportDir": "cypress/report/.jsons",
+        "reportPageTitle": "admin-report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
